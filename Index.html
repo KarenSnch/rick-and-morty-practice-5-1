@@ -31,6 +31,7 @@
         const loader = document.createElement('div')
         loader.setAttribute('id','loader')
         loader.innerText='cargando...'
+        container.appendChild(loader)
     }
     function removeLoader(){
         const loader=document.getElementById('loader')
@@ -49,12 +50,12 @@
         const personajes = data.results
         personajes.forEach(element => {
             console.log(element.image);
-            const container_personaje=document.createElement('div')
+            const container_personajes=document.createElement('div')
             
             const img=document.createElement('img')
             img.src=element.image
-            container_personaje.appendChild(img)
-            container.appendChild(container_personaje)
+            container_personajes.appendChild(img)
+            container.appendChild(container_personajes)
         });
         removeLoader()
     
@@ -79,7 +80,6 @@
     btnDarkMode.textContent = "Dark Mode";
   }
 }
-
 
 
 btnDarkMode.addEventListener("click", toggleDarkMode);
